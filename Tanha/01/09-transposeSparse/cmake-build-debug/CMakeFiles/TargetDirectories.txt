@@ -1,0 +1,3 @@
+D:/WorkSpace/Cpp/DSA/Tanha/01/09-transposeSparse/cmake-build-debug/CMakeFiles/09_transposeSparse.dir
+D:/WorkSpace/Cpp/DSA/Tanha/01/09-transposeSparse/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/WorkSpace/Cpp/DSA/Tanha/01/09-transposeSparse/cmake-build-debug/CMakeFiles/rebuild_cache.dir

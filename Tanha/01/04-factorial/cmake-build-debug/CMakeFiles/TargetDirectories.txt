@@ -1,0 +1,3 @@
+D:/WorkSpace/Cpp/DSA/Tanha/01/04-factorial/cmake-build-debug/CMakeFiles/04_factorial.dir
+D:/WorkSpace/Cpp/DSA/Tanha/01/04-factorial/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/WorkSpace/Cpp/DSA/Tanha/01/04-factorial/cmake-build-debug/CMakeFiles/rebuild_cache.dir
