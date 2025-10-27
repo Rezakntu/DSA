@@ -5,7 +5,7 @@ using namespace std;
 int seqSearch(int arr[], int n, int x);
 
 int main() {
-    int a[] = {23, 12, 2, 43, 5, 32, 54, 7, 65, 4, 34, 26, 7, 56};
+    int a[] = {23, 12, 3, 43, 5, 32, 54, 7, 65, 4, 34, 26, 7, 56};
     int n = sizeof(a) / sizeof(a[0]);
 
     cout << "Array elements: ";
