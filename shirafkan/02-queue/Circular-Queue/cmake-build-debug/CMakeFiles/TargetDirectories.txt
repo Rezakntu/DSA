@@ -1,0 +1,3 @@
+E:/Workspace/Cpp/DSA/shirafkan/02-queue/Circular-Queue/cmake-build-debug/CMakeFiles/Circular_Queue.dir
+E:/Workspace/Cpp/DSA/shirafkan/02-queue/Circular-Queue/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/Workspace/Cpp/DSA/shirafkan/02-queue/Circular-Queue/cmake-build-debug/CMakeFiles/rebuild_cache.dir
