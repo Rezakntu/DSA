@@ -1,70 +1,53 @@
-// search in linked list
 #include <iostream>
-#include <stdlib.h>
-#include <conio.h>
 using namespace std;
-///////////////////////////////////////
-struct node
-{
-    int          data;
-    struct node *next;
+
+struct Node {
+    int data;
+    Node* next;
 };
 
-///////////////////////////////////////
-
-void   add_begin(struct node **s, int item)
-{
-    struct node* n;
-
-    n =new(struct node);
-
-    n->data  = item;
-
-    n->next = (*s);
-
-    (*s)    = n;
+void add_begin(Node*& head, int item) {
+    Node* n = new Node();
+    n->data = item;
+    n->next = head;
+    head = n;
 }
-///////////////////////////////////////
-bool search(struct node *head, int x)
-{
-    struct node *t;
 
-    t = head;
-    while (t != NULL)
-    {
+bool search(Node* head, int x) {
+    Node* t = head;
+    while (t != nullptr) {
         if (t->data == x)
             return true;
         t = t->next;
     }
     return false;
 }
-///////////////////////////////////////
-bool search_rec(struct node  *h, int x)
-{
-    if (h == NULL)
-        return false;
 
+bool search_rec(Node* h, int x) {
+    if (h == nullptr)
+        return false;
     if (h->data == x)
         return true;
-
     return search_rec(h->next, x);
 }
 
-///////////////////////////////////////
-int main()
-{
-    struct node *h = NULL;
+int main() {
+    Node* head = nullptr;
 
-    add_begin(&h, 5);
-    add_begin(&h, 8);
-    add_begin(&h, 2);
-    add_begin(&h, 6);  // 6 -> 2 -> 8 -> 5
+    add_begin(head, 5);
+    add_begin(head, 8);
+    add_begin(head, 2);
+    add_begin(head, 6); // 6 -> 2 -> 8 -> 5
 
-    search(h, 2) ? cout<<"found" : cout<<"not found";
+    cout << (search(head, 2) ? "found" : "not found") << endl;
+    cout << (search_rec(head, 7) ? "found" : "not found") << endl;
 
-    cout<<endl;
+    // Free the memory to prevent leaks
+    while (head != nullptr) {
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+    }
 
-    search_rec(h, 11)? cout<<"found" : cout<<"not found";
-
-    getch();
+    return 0;
 }
