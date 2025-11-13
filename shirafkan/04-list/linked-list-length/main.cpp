@@ -1,69 +1,50 @@
-// length link list
 #include <iostream>
-#include <conio.h>
 using namespace std;
-////////////////////////////////////////
-struct node
-{
+
+struct Node {
     int data;
-    struct node *next;
+    Node* next;
 };
 
-////////////////////////////////////////
-
-void add_begin(struct node **s, int item)
-{
-    struct node *n ;
-
-    n=new(struct node);
-
-    n->data  = item;
-
-    n->next = (*s);
-
-    (*s)    = n;
+void add_begin(Node*& head, int item) {
+    Node* n = new Node();
+    n->data = item;
+    n->next = head;
+    head = n;
 }
 
-////////////////////////////////////////
-int len(struct node  *h)
-{
+int len(Node* head) {
     int count = 0;
-    struct node *x;
-
-    x = h;
-    while (x != NULL)
-    {
+    Node* x = head;
+    while (x != nullptr) {
         count++;
         x = x->next;
     }
     return count;
 }
-/////////////////////////////////////////
-int len_rec(struct node *h)
-{
-    if (h == NULL)
-        return 0;
 
-    return 1 + len_rec(h->next);
+int len_rec(Node* head) {
+    if (head == nullptr)
+        return 0;
+    return 1 + len_rec(head->next);
 }
 
-////////////////////////////////////////
+int main() {
+    Node* head = nullptr;
 
-int main()
-{
-    struct node *h;
+    add_begin(head, 11);
+    add_begin(head, 32);   // 32 -> 11
+    add_begin(head, 47);   // 47 -> 32 -> 11
 
-    h = NULL;
+    cout << len(head) << endl;
+    cout << len_rec(head) << endl;
 
-    add_begin(&h, 11);
-    add_begin(&h, 32);   // 32 ->11
-    add_begin(&h, 47);   // 47 ->32 ->11
+    // Cleanup memory (good practice)
+    while (head != nullptr) {
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+    }
 
-    cout<<len(h);  //3
-
-    cout<<endl;
-
-    cout<<len_rec(h); //3
-
-    getch();
+    return 0;
 }

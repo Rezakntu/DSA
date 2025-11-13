@@ -1,3 +1,5 @@
 # ninja log v6
 27	10733	7845812757070825	CMakeFiles/linked_list_length.dir/main.cpp.obj	3f78d73b57be6cb5
 10744	11672	7845812864234332	linked_list_length.exe	d72c5a33280d556f
+56	6652	7847734564823280	CMakeFiles/linked_list_length.dir/main.cpp.obj	3f78d73b57be6cb5
+6655	7837	7847734630809308	linked_list_length.exe	d72c5a33280d556f
