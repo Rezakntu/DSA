@@ -1,3 +1,5 @@
 # ninja log v6
 25	6184	7847742151760960	CMakeFiles/reverse_linked_list.dir/main.cpp.obj	a3b3e87f1790832a
 6194	6916	7847742213457237	reverse_linked_list.exe	a61c33664f88aca7
+72	5320	7847746354407553	CMakeFiles/reverse_linked_list.dir/main.cpp.obj	a3b3e87f1790832a
+5323	5875	7847746406914391	reverse_linked_list.exe	a61c33664f88aca7

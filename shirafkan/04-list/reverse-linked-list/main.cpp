@@ -1,104 +1,89 @@
-//reverse
 #include <iostream>
-#include <cstdlib>
-#include <conio.h>
 using namespace std;
-///////////////////////////
-struct node
-{
+
+/////////////////////////////////////////////
+struct Node {
     int data;
-    struct node *next;
-}*start;
-/////////////////////////////////////////////////
-node *create(int item)
-{
-    struct  node *n;
+    Node* next;
 
-    n = new(struct node);
-    if (n == NULL)
-        return 0;
-    else
-    {
-        n->data = item;
-        n->next = NULL;
-        return n;
-    }
-}
+    Node(int value) : data(value), next(nullptr) {}
+};
 
-/////////////////////////////////////////////////
-void add(int v)
-{
-    struct node *n, *p;
+/////////////////////////////////////////////
+class LinkedList {
+private:
+    Node* head;
 
-    n = create(v);
+public:
+    LinkedList() : head(nullptr) {}
 
-    if (start == NULL)
-    {
-        start = n;
-        start->next = NULL;
-    }
-    else
-    {
-        p = start;
-        start = n;
-        start->next = p;
-    }
-}
-///////////////////////////////////////////////
-int reverse(void)
-{
-    struct node *p1,*p2,*p3;
-
-    if (start==NULL)         return 0;
-    if (start->next==NULL)   return 0;
-
-    p1 =start;
-    p2 =p1->next;
-    p3 =p2->next;
-
-    p1 ->next=NULL;
-    p2 ->next=p1;
-
-    while(p3!=NULL)
-    {
-        p1=p2;
-        p2=p3;
-        p3=p3->next;
-        p2->next=p1;
-    }
-    start=p2;
-}
-///////////////////////////////////////////////////
-void display()
-{
-    struct node *n;
-    if (start == NULL)
-    {
-        cout<<"The List is Empty"<<endl;
-        return;
+    /////////////////////////////////////////////
+    // Add at beginning
+    void add(int value) {
+        Node* n = new Node(value);
+        n->next = head;
+        head = n;
     }
 
-    n = start;
-    while (n != NULL)
-    {
-        cout<<n->data<<"->";
-        n = n->next;
+    /////////////////////////////////////////////
+    // Reverse the linked list (iterative)
+    void reverse() {
+        if (!head || !head->next)
+            return;
+
+        Node *p1 = nullptr, *p2 = head, *p3 = nullptr;
+
+        while (p2 != nullptr) {
+            p3 = p2->next;   // save next
+            p2->next = p1;   // reverse pointer
+            p1 = p2;         // move forward
+            p2 = p3;
+        }
+
+        head = p1;  // new head
     }
-    cout<<"NULL"<<endl<<endl;
-}
+
+    /////////////////////////////////////////////
+    // Display the list
+    void display() const {
+        if (!head) {
+            cout << "The List is Empty\n";
+            return;
+        }
+
+        Node* n = head;
+        while (n != nullptr) {
+            cout << n->data << " -> ";
+            n = n->next;
+        }
+        cout << "NULL\n\n";
+    }
+
+    /////////////////////////////////////////////
+    // Destructor to free memory
+    ~LinkedList() {
+        Node* cur = head;
+        while (cur) {
+            Node* temp = cur;
+            cur = cur->next;
+            delete temp;
+        }
+    }
+};
+
 //////////////////////////////////////////////////////
-main()
-{
-    add(1);
-    add(2);
-    add(3);
+int main() {
+    LinkedList list;
 
-    display();
+    list.add(1);
+    list.add(2);
+    list.add(3);
 
-    reverse();
+    list.display();   // 3 -> 2 -> 1 -> NULL
 
-    display();
+    list.reverse();
 
+    list.display();   // 1 -> 2 -> 3 -> NULL
 
-    getch();
+    return 0;
 }
