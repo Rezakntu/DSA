@@ -69,7 +69,7 @@ int main() {
     list.addBegin(8);   // List: 8 -> 6 -> 4 -> 5
 
     try {
-        cout << list.findKth(4);   // returns 5
+        cout << list.findKth(3);   // returns 5
     }
     catch (const exception& e) {
         cout << "Error: " << e.what();
