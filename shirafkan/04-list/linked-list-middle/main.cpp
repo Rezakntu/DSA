@@ -1,75 +1,61 @@
-// middle in linked list
 #include <iostream>
-#include <stdlib.h>
-#include <conio.h>
 using namespace std;
-//////////////////////////
-struct node
-{
+
+class Node {
+public:
     int data;
-    struct node* next;
+    Node* next;
+
+    explicit Node(int value) : data(value), next(nullptr) {}
 };
 
-////////////////////////////////////////////
-void add_begin(struct node** s, int item)
+void addBegin(Node*& head, int value)
 {
-
-    struct node *n;
-
-    n =new(struct node);
-
-    n->data  = item;
-
-    n->next = (*s);
-
-    (*s) = n;
+    Node* newNode = new Node(value);
+    newNode->next = head;
+    head = newNode;
 }
 
-///////////////////////////////////////
-void show(struct node *p)
+void show(const Node* head)
 {
-    while (p != NULL)
-    {
-        cout<< p->data<<"->";
-        p = p->next;
+    const Node* curr = head;
+    while (curr != nullptr) {
+        cout << curr->data << " -> ";
+        curr = curr->next;
     }
-    cout<<"NULL\n";
+    cout << "NULL\n";
 }
-//////////////////////////////////////////////
-void middle(struct node *h)
+
+void middle(const Node* head)
 {
-    struct node *sp,*fp;
+    const Node* slow = head;
+    const Node* fast = head;
 
-    sp=h;
-    fp=h;
-
-    if (h!=NULL)
-    {
-        while (fp != NULL && fp->next != NULL)
-        {
-            fp = fp->next->next;
-            sp = sp->next;
-        }
-        cout<< sp->data;
+    if (head == nullptr) {
+        cout << "List is empty\n";
+        return;
     }
+
+    while (fast != nullptr && fast->next != nullptr) {
+        fast = fast->next->next;
+        slow = slow->next;
+    }
+
+    cout << "Middle element: " << slow->data;
 }
-///////////////////////////////////////////////
+
 int main()
 {
-    struct node *h = NULL;
-    int i;
+    Node* head = nullptr;
 
+    addBegin(head, 5);
+    addBegin(head, 4);
+    addBegin(head, 3);
+    addBegin(head, 2);
+    addBegin(head, 1);    // 1 -> 2 -> 3 -> 4 -> 5
 
-    add_begin(&h, 5);
-    add_begin(&h, 4);
-    add_begin(&h, 3);
-    add_begin(&h, 2);
-    add_begin(&h, 1);   // 1 ->  2 -> 3  -> 4  -> 5
+    show(head);
+    middle(head);
 
-    show(h);
-
-    middle(h);
-
-
-    getch();
+    return 0;
 }
