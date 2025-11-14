@@ -1,135 +1,101 @@
-// use Linked List and subtract two large Numbers
-/////////////////////////////////////////////////////////
 #include <iostream>
-#include <conio.h>
-#include<bits/stdc++.h>
+#include <cmath>
 using namespace std;
-/////////////////////////////////////////////////////////
-struct node
-{
-    int  data;
-    struct node *next;
+
+class Node {
+public:
+    int data;
+    Node* next;
+
+    explicit Node(int value) : data(value), next(nullptr) {}
 };
-/////////////////////////////////////////////////////////
-node* create(int data)
-{
-    node *t;
 
-	t = new node;
-    t->data = data;
-    t->next = NULL;
-
-    return t;
+// Utility: create new node
+Node* create(int value) {
+    return new Node(value);
 }
-/////////////////////////////////////////////////////////
-int getLength(node *n)
-{
+
+// Count length of list
+int getLength(const Node* n) {
     int c = 0;
-    while (n != NULL)
-    {
+    while (n) {
         n = n->next;
         c++;
     }
     return c;
 }
-/////////////////////////////////////////////////////////////////////////////////
-node* addZero(node* s, int d)
-{
-    node* z,*t;
 
-	if (s == NULL)
-        return NULL;
+// Add d zeros in front of a list
+Node* addZero(Node* head, int count) {
+    if (!head) return nullptr;
 
-    z = create(0);
-    d--;
+    Node* newHead = new Node(0);
+    count--;
 
-    t = z;
-    while (d--)
-    {
-        t->next = create(0);
-        t = t->next;
+    Node* curr = newHead;
+    while (count--) {
+        curr->next = new Node(0);
+        curr = curr->next;
     }
-    t->next = s;
-    return z;
+    curr->next = head;
+
+    return newHead;
 }
-//////////////////////////////////////////////////////////////////////////
-/* a recursive function, move till the last node,
-   and subtract the digits and create the node and return the node.
-   If d1 < d2, we borrow the number from previous digit. */
-node* sub(node* l1, node* l2, bool& borrow)
-{
-	node *previous,*current;
 
-	if (l1 == NULL && l2 == NULL && borrow == 0)
-        return NULL;
+// Recursive subtraction (digit by digit), returns a new list
+Node* subtractRecursive(Node* l1, Node* l2, bool& borrow) {
+    if (!l1 && !l2 && !borrow)
+        return nullptr;
 
-	previous= sub(l1 ? l1->next : NULL, l2 ? l2->next : NULL, borrow);
+    Node* nextNode = subtractRecursive(l1 ? l1->next : nullptr,
+                                       l2 ? l2->next : nullptr,
+                                       borrow);
 
-    int   d1,d2,sub;
-    d1 = l1->data;
-    d2 = l2->data;
-    sub = 0;
+    int d1 = l1 ? l1->data : 0;
+    int d2 = l2 ? l2->data : 0;
 
-    /* if you have given the value value to next digit then reduce the d1 by 1 */
-    if (borrow)
-    {
+    if (borrow) {
         d1--;
         borrow = false;
     }
 
-    /* If d1 < d2 , then borrow the number from previous digit.
-       Add 10 to d1 and set borrow = true; */
-    if (d1 < d2)
-    {
+    if (d1 < d2) {
+        d1 += 10;
         borrow = true;
-        d1 = d1 + 10;
     }
 
-    sub = d1 - d2;
+    int diff = d1 - d2;
+    Node* result = new Node(diff);
+    result->next = nextNode;
 
-    current = create(sub);
-
-    current->next = previous;
-
-    return current;
+    return result;
 }
-/////////////////////////////////////////////////////////
-node* subtract(node* l1, node* l2)
-{
-    node *lnode,*snode,*t1,*t2;
-	int   len1,len2;
 
-	if (l1 == NULL &&  l2 == NULL)
-            return NULL;
+// Main subtract function: aligns lengths, chooses larger number
+Node* subtract(Node* l1, Node* l2) {
+    if (!l1 && !l2) return nullptr;
 
-    len1 = getLength(l1);
-    len2 = getLength(l2);
+    int len1 = getLength(l1);
+    int len2 = getLength(l2);
 
-	lnode = NULL;
-	snode = NULL;
-    t1 = l1;
-    t2 = l2;
+    Node *larger = nullptr, *smaller = nullptr;
 
-    // If lengths differ, calculate the smaller node and add zeros for smaller node
-    if (len1 != len2)
-    {
-        lnode = len1 > len2 ? l1 : l2;
-        snode = len1 > len2 ? l2 : l1;
-        snode = addZero(snode, abs(len1 - len2));
+    Node* t1 = l1;
+    Node* t2 = l2;
+
+    // Make lengths equal by padding zeroes
+    if (len1 != len2) {
+        larger = (len1 > len2) ? l1 : l2;
+        smaller = (len1 > len2) ? l2 : l1;
+
+        smaller = addZero(smaller, abs(len1 - len2));
     }
-
-    else
-    {
-        // If both list lengths are equal, then calculate the larger and smaller list.
-		// If 5-6-7 & 5-6-8 are linked list,
-		// then walk through linked list at last node as 7 < 8,
-		// larger node is 5-6-8 and smaller node is 5-6-7.
-        while (l1 && l2)
-        {
-            if (l1->data != l2->data)
-            {
-                lnode = l1->data > l2->data ? t1 : t2;
-                snode = l1->data > l2->data ? t2 : t1;
+    else {
+        // Compare lists to find larger
+        while (l1 && l2) {
+            if (l1->data != l2->data) {
+                larger  = (l1->data > l2->data) ? t1 : t2;
+                smaller = (l1->data > l2->data) ? t2 : t1;
                 break;
             }
             l1 = l1->next;
@@ -138,33 +104,28 @@ node* subtract(node* l1, node* l2)
     }
 
     bool borrow = false;
-
-    return sub(lnode, snode, borrow);
+    return subtractRecursive(larger, smaller, borrow);
 }
-/////////////////////////////////////////////////////////
-void show(struct node *n)
-{
-    while (n != NULL)
-    {
-        cout<< n->data;
+
+// Print the number stored in list
+void show(const Node* n) {
+    while (n) {
+        cout << n->data;
         n = n->next;
     }
-    cout<<"\n";
+    cout << "\n";
 }
-/////////////////////////////////////////////////////////
-int main()
-{
-    node  *h1,*h2,*r;
 
-	h1 = create(1);
-    h1->next = create(2);
-    h1->next->next = create(3);
+int main() {
+    Node* h1 = new Node(1);
+    h1->next = new Node(2);
+    h1->next->next = new Node(3);   // number = 123
 
-    h2 = create(4);
+    Node* h2 = new Node(4);         // number = 4
 
-    r = subtract(h1, h2);
+    Node* r = subtract(h1, h2);     // 123 - 4 = 119
 
-    show(r);
+    show(r);                        // outputs: 119
 
-	getch();
+    return 0;
 }
