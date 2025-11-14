@@ -1,65 +1,84 @@
-// find largest element in singly linked list.
-#include <bits/stdc++.h>
-#include <conio.h>
+#include <iostream>
+#include <limits>
 using namespace std;
-///////////////////////////////////////////
-struct node {
+
+/////////////////////////////////////////////
+// Node (modern C++)
+struct Node {
     int data;
-    struct node* next;
+    Node* next;
+
+    Node(int value) : data(value), next(nullptr) {}
 };
-/////////////////////////////////////////////////////////
-int max(struct node* h)
-{
-    int max = INT_MIN;
 
-    while (h != NULL)
-    {
-        if (h->data > max)
-            max = h->data;
-        h = h->next;
+/////////////////////////////////////////////
+class LinkedList {
+private:
+    Node* head;
+
+public:
+    LinkedList() : head(nullptr) {}
+
+    /////////////////////////////////////////
+    // Add new element at beginning
+    void add(int value) {
+        Node* n = new Node(value);
+        n->next = head;
+        head = n;
     }
-    return max;
-}
 
-/////////////////////////////////////////////////////////
-void   add(struct node** h, int data)
-{
-    struct node* n;
+    /////////////////////////////////////////
+    // Find maximum value in the list
+    int getMax() const {
+        if (!head) {
+            throw runtime_error("List is empty");
+        }
 
-    n = (struct node*)malloc(sizeof(struct node));
+        int maximum = numeric_limits<int>::min();
+        Node* cur = head;
 
-    n->data = data;
-
-    n->next = (*h);
-
-    (*h) = n;
-}
-
-/////////////////////////////////////////////////////////
-void show(struct node* h)
-{
-    while (h != NULL)
-    {
-        cout << h->data << "->";
-        h = h->next;
+        while (cur) {
+            if (cur->data > maximum)
+                maximum = cur->data;
+            cur = cur->next;
+        }
+        return maximum;
     }
-    cout << "NULL" << endl;
-}
+
+    /////////////////////////////////////////
+    // Display list
+    void show() const {
+        Node* cur = head;
+        while (cur) {
+            cout << cur->data << "->";
+            cur = cur->next;
+        }
+        cout << "NULL\n";
+    }
+
+    /////////////////////////////////////////
+    // Destructor (prevents memory leaks)
+    ~LinkedList() {
+        Node* cur = head;
+        while (cur) {
+            Node* temp = cur;
+            cur = cur->next;
+            delete temp;
+        }
+    }
+};
 
 /////////////////////////////////////////////////////////
-int main()
-{
-    struct  node *h;
-    h =NULL;
+int main() {
+    LinkedList list;
 
-    add(&h,5)  ;
-    add(&h,26);
-    add(&h,7);
+    list.add(5);
+    list.add(26);
+    list.add(7);
 
-    show(h);
+    list.show();
 
-    cout<<"\n\nmax="<<max(h);
+    cout << "\nmax = " << list.getMax();
 
-
-    getch();
+    return 0;
 }
