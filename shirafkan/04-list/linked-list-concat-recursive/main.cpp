@@ -1,84 +1,81 @@
-#include <conio.h>
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
-///////////////////////////////////////////
-struct node
-{
+
+class Node {
+public:
     int data;
-    struct node *next;
+    Node* next;
+
+    explicit Node(int value) : data(value), next(nullptr) {}
 };
-///////////////////////////////////////////////////////////
-void display(struct node *head)
+
+// Recursive display
+void display(const Node* head)
 {
-    if(head == NULL)
-    {
-        cout<<"NULL\n";
+    if (!head) {
+        cout << "NULL\n";
+        return;
     }
-    else
-    {
-        cout<< head -> data<<"->";
-        display(head->next);
-    }
+
+    cout << head->data << " -> ";
+    display(head->next);
 }
-///////////////////////////////////////////////////////////
-void   concat(struct node *a,struct node *b)
+
+// Concatenate list b at end of list a (recursive)
+void concat(Node* a, Node* b)
 {
-    if( a != NULL && b!= NULL )
-    {
-        if (a->next == NULL)
-            a->next = b;
-        else
-            concat(a->next,b);
+    if (!a || !b) {
+        cout << "Either list A or list B is NULL\n";
+        return;
     }
+
+    if (a->next == nullptr)
+        a->next = b;
     else
-    {
-        cout<<"Either a or b is NULL\n";
-    }
+        concat(a->next, b);
 }
-///////////////////////////////////////////////////////////
+
+// Build linked list from user input
+Node* buildList(int count)
+{
+    Node* head = nullptr;
+    Node* tail = nullptr;
+
+    cout << "Enter " << count << " values:\n";
+
+    while (count--) {
+        int value;
+        cin >> value;
+
+        Node* newNode = new Node(value);
+
+        if (!head) {
+            head = tail = newNode;
+        } else {
+            tail->next = newNode;
+            tail = newNode;
+        }
+    }
+
+    return head;
+}
+
 int main()
 {
-    struct node *prev,*a, *b, *p;
-    int n,i;
+    int n;
 
-    cout<<"num a:";
-    cin>>n;
+    cout << "Number of elements in list A: ";
+    cin >> n;
+    Node* a = buildList(n);
 
-    a=NULL;
-    for(i=0;i<n;i++)
-    {
-        p=new node;
-        cin>>p->data;
+    cout << "Number of elements in list B: ";
+    cin >> n;
+    Node* b = buildList(n);
 
-        p->next=NULL;
-        if(a==NULL)
-            a=p;
-        else
-            prev->next=p;
-        prev=p;
-    }
+    concat(a, b);
 
-    cout<<"num b:";
-    cin>>n;
-    b=NULL;
-
-    for(i=0;i<n;i++)
-    {
-        p=new node;
-        cin>>p->data;
-        p->next=NULL;
-        if(b==NULL)
-            b=p;
-        else
-            prev->next=p;
-        prev=p;
-    }
-
-    concat(a,b);
-
-    cout<<"\n\nconcat:";
-
+    cout << "\nConcatenated list:\n";
     display(a);
 
-    getch();
+    return 0;
 }

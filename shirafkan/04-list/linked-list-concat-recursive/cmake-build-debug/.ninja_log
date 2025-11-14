@@ -1,3 +1,5 @@
 # ninja log v6
 18	14241	7847928126846752	CMakeFiles/linked_list_concat_recursive.dir/main.cpp.obj	d00c6c751fd266c8
 14260	14839	7847928269268188	linked_list_concat_recursive.exe	6dddd3a73a2fdaa9
+108	4460	7847932853911705	CMakeFiles/linked_list_concat_recursive.dir/main.cpp.obj	d00c6c751fd266c8
+4461	5617	7847932897439092	linked_list_concat_recursive.exe	6dddd3a73a2fdaa9
