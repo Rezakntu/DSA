@@ -1,81 +1,88 @@
-//Recursive-Reverse
-#include  <iostream>
-#include  <cstdlib>
-#include  <conio.h>
+#include <iostream>
 using namespace std;
 
-/////////////////////////////////
-struct node
-{
-    int           data;
-    struct node  *next;
+/////////////////////////////////////////////
+// Node definition (modern C++)
+struct Node {
+    int data;
+    Node* next;
+
+    Node(int value) : data(value), next(nullptr) {}
 };
-/////////////////////////////////
-void reverse(struct node  **head)
-{
-    struct node *first , *p;
-          
-    if (*head == NULL)
-       return;   
- 
-    first = *head; 
-	 
-    p  = first->next;
- 
-    if (p == NULL)
-       return;   
- 
-    reverse(&p);
-    
-    first->next->next  = first;  
-     
-    first->next  = NULL;          
- 
-    *head = p;              
-}
-/////////////////////////////////////////////////////////////
-void add(struct node **head, int v)
-{
-    struct node *n;
-	
-	n = (struct node*) malloc(sizeof(struct node));
-            
-    n->data = v;
-                
-    n->next = (*head);    
-        
-    (*head)   = n;
-}
- 
-/////////////////////////////////////////////////////////////
-void show(struct node *h)
-{
-    struct node *t;
-	
-	t = h;
-    while(t != NULL)
-    {
-        cout<<t->data<<"->";    
-        t = t->next;  
+
+/////////////////////////////////////////////
+class LinkedList {
+private:
+    Node* head;
+
+    // --- Recursive helper ---
+    Node* reverseRec(Node* node) {
+        // Base case: empty or last node
+        if (!node || !node->next)
+            return node;
+
+        Node* newHead = reverseRec(node->next);
+
+        node->next->next = node;  // reverse the link
+        node->next = nullptr;     // old head becomes tail
+
+        return newHead;
     }
-    cout<<"null";
-}    
+
+public:
+    LinkedList() : head(nullptr) {}
+
+    /////////////////////////////////////////////
+    // Add at beginning
+    void add(int value) {
+        Node* n = new Node(value);
+        n->next = head;
+        head = n;
+    }
+
+    /////////////////////////////////////////////
+    // Recursive reverse wrapper
+    void reverse() {
+        head = reverseRec(head);
+    }
+
+    /////////////////////////////////////////////
+    // Display list
+    void show() const {
+        Node* cur = head;
+        while (cur) {
+            cout << cur->data << "->";
+            cur = cur->next;
+        }
+        cout << "NULL\n";
+    }
+
+    /////////////////////////////////////////////
+    // Free memory
+    ~LinkedList() {
+        Node* cur = head;
+        while (cur) {
+            Node* temp = cur;
+            cur = cur->next;
+            delete temp;
+        }
+    }
+};
+
 /////////////////////////////////////////////////////////////
-int main()
-{
-    struct node *h = NULL;
-   
-     add(&h , 5);
-     add(&h , 9);
-     add(&h , 2); 
-          
-     show(h);
-	     
-     reverse(&h); 
-	                      
-     cout<<"\n\n";
-     
-	 show(h); 
-	    
-     getchar();
+int main() {
+    LinkedList list;
+
+    list.add(5);
+    list.add(9);
+    list.add(2);
+
+    list.show();      // 2->9->5->NULL
+
+    list.reverse();
+
+    cout << "\n";
+    list.show();      // 5->9->2->NULL
+
+    return 0;
 }
