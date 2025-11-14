@@ -1,96 +1,73 @@
-//  delete all occurrences of a given item in linked list
 #include <iostream>
-#include <stdlib.h>
-#include <conio.h>
 using namespace std;
 
-///////////////////////////////////////////////////////////
-struct node
-{
+struct Node {
     int data;
-    struct node *next;
+    Node* next;
 };
 
-//////////////////////////////////////////////////////////
-
-void add_begin(struct node** s, int item)
+void add_begin(Node*& head, int item)
 {
-    struct node* n;
-
-    n = (struct node*) malloc(sizeof(struct node));
-    n->data  = item;
-    n->next = (*s);
-    (*s) = n;
+    Node* n = new Node{item, head};
+    head = n;
 }
 
-/////////////////////////////////////////////
-
-void del(struct node **s, int item)
+void del(Node*& head, int item)
 {
-    struct node *f , *p;
-
-    f=*s;
-
-    while (f != NULL && f->data == item)
+    // Remove matching nodes from the beginning
+    while (head != nullptr && head->data == item)
     {
-        *s = f->next;
-        free(f);
-        f = *s;
+        Node* temp = head;
+        head = head->next;
+        delete temp;
     }
 
-    while (f != NULL)
+    Node* curr = head;
+    Node* prev = nullptr;
+
+    // Remove matching nodes in the middle
+    while (curr != nullptr)
     {
-        while (f != NULL && f->data != item)
+        if (curr->data == item)
         {
-            p = f;
-            f = f->next;
+            prev->next = curr->next;
+            delete curr;
+            curr = prev->next;
         }
-
-        if (f == NULL) return;
-
-        p->next = f->next;
-
-        free(f);
-
-        f = p->next;
+        else
+        {
+            prev = curr;
+            curr = curr->next;
+        }
     }
 }
 
-/////////////////////////////////////////////
-
-void show(struct node *t)
+void show(Node* t)
 {
-    while (t != NULL)
+    while (t != nullptr)
     {
-        cout<<t->data<<"  ";
+        cout << t->data << "  ";
         t = t->next;
     }
-    cout<<endl<<"------------------------"<<endl;
+    cout << "\n------------------------\n";
 }
-
-/////////////////////////////////////////////
 
 int main()
 {
+    Node* head = nullptr;
 
-    struct node  *h;
+    add_begin(head, 13);
+    add_begin(head, 14);
+    add_begin(head, 13);
+    add_begin(head, 12);
+    add_begin(head, 11);
+    add_begin(head, 13);
 
-    h = NULL;
+    show(head);
 
-    add_begin(&h, 13);
-    add_begin(&h, 14);
-    add_begin(&h, 13);
-    add_begin(&h, 12);
-    add_begin(&h, 11);
-    add_begin(&h, 13);
+    del(head, 13);
 
-    show(h);
+    show(head);
 
-    del(&h, 13);
-
-    show(h);
-
-
-    getch();
+    return 0;
 }
-
