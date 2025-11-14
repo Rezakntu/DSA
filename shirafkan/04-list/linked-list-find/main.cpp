@@ -1,55 +1,79 @@
-// find node in kth position
-#include <bits/stdc++.h>
-#include <conio.h>
+#include <iostream>
+#include <stdexcept>
 using namespace std;
-////////////////////////////////////////////////
-struct node
-{
+
+/////////////////////////////////////
+// Node class (modern C++)
+struct Node {
     int data;
-    struct node* next;
+    Node* next;
+
+    Node(int value) : data(value), next(nullptr) {}
 };
 
-////////////////////////////////////////////////
+/////////////////////////////////////
+class LinkedList {
+private:
+    Node* head;
 
-void add_begin(struct node** s, int item)
-{
-    struct node  *n;
+public:
+    LinkedList() : head(nullptr) {}
 
-    n=(struct node*) malloc(sizeof(struct node));
+    /////////////////////////////////////
+    // Add new value at the beginning
+    void addBegin(int value) {
+        Node* n = new Node(value);
+        n->next = head;
+        head = n;
+    }
 
-    n->data = item;
+    /////////////////////////////////////
+    // Recursive helper function
+    int findKth(Node* node, int k) const {
+        if (!node)
+            throw out_of_range("k is larger than the list length");
 
-    n->next = (*s);
+        if (k == 1)
+            return node->data;
 
-    (*s) = n;
-}
+        return findKth(node->next, k - 1);
+    }
 
-/////////////////////////////////////////////////
+    /////////////////////////////////////
+    int findKth(int k) const {
+        if (k <= 0)
+            throw invalid_argument("k must be positive");
 
-int find(struct node *h, int k)
-{
-    int count;
+        return findKth(head, k);
+    }
 
-    count = 1;
+    /////////////////////////////////////
+    // Destructor to free memory
+    ~LinkedList() {
+        Node* cur = head;
+        while (cur) {
+            Node* temp = cur;
+            cur = cur->next;
+            delete temp;
+        }
+    }
+};
 
-    if(count == k)
-        return h->data;
+/////////////////////////////////////
+int main() {
+    LinkedList list;
 
-    return  find(h->next, k-1);
-}
+    list.addBegin(5);
+    list.addBegin(4);
+    list.addBegin(6);
+    list.addBegin(8);   // List: 8 -> 6 -> 4 -> 5
 
-/////////////////////////////////////////////////
+    try {
+        cout << list.findKth(4);   // returns 5
+    }
+    catch (const exception& e) {
+        cout << "Error: " << e.what();
+    }
 
-int main()
-{
-    struct node *h = NULL;
-
-    add_begin(&h, 5);
-    add_begin(&h, 4);
-    add_begin(&h, 6);
-    add_begin(&h, 8);    // 8 -> 6 -> 4 -> 5
-
-    cout<<find(h, 4);
-
-    getch();
+    return 0;
 }
