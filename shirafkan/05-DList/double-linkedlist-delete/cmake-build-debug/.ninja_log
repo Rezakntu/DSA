@@ -1,5 +1,6 @@
 # ninja log v6
-7	1328	7849870413692822	CMakeFiles/double_linkedlist_delete.dir/main.cpp.obj	6961c1fd8d756cd5
-1331	1613	7849870426934040	double_linkedlist_delete.exe	b8c02d4bc113e833
 46	1091	7849871319081647	CMakeFiles/double_linkedlist_delete.dir/main.cpp.obj	6961c1fd8d756cd5
 1092	1259	7849871329526700	double_linkedlist_delete.exe	b8c02d4bc113e833
+23	1051	7849875771604535	CMakeFiles/double_linkedlist_delete.dir/main.cpp.obj	6961c1fd8d756cd5
+30	1116	7849875771684583	CMakeFiles/double_linkedlist_delete.dir/DoublyLinkedList.cpp.obj	13a995e5b51a133e
+1116	1263	7849875782542107	double_linkedlist_delete.exe	c27e7afa8f031188

@@ -1,109 +1,25 @@
-//delete : Doubly Linked List
-    #include<iostream>
-    #include<cstdlib>
-    #include<conio.h>
-    using namespace std;
-///////////////////////////////////////
-    struct node
-    {
-        int         data;
-        struct node *next;
-        struct node *prev;
-    }*start;
-/////////////////////////////////////////////////////////
-    void create(int item)
-    {
-        struct node *s, *t;
-        t = new(struct node);
-        t->data = item;
-        t->next = NULL;
-        if (start == NULL)
-        {
-            t->prev = NULL;
-            start = t;
-        }
-        else
-        {
-            s = start;
-            while (s->next != NULL)
-                s = s->next;
-            s->next = t;
-            t->prev = s;
-        }
-    }
- /////////////////////////////////////////////////////////
-    void deletenode(int item)
-    {
-        struct node *t, *q;
+#include "DoublyLinkedList.h"
 
-        if (start->data == item)
-        {
-            t = start;
-            start = start->next;
-            start->prev = NULL;
-            free(t);
-            return;
-        }
+int main()
+{
+    DoublyLinkedList dll;
 
-        q = start;
-        while (q->next->next != NULL)
-        {
-           if (q->next->data == item)
-            {
-                t = q->next;
-                q->next = t->next;
-                t->next->prev = q;
-                free(t);
-                return;
-            }
-            q = q->next;
-        }
+    dll.create(5);
+    dll.create(3);
+    dll.create(8);
+    dll.create(12);
 
-        if (q->next->data == item)
-        {
-            t = q->next;
-            free(t);
-            q->next = NULL;
-            return;
-        }
+    dll.show();
 
-        cout<<"not found"<<endl;
-    }
-/////////////////////////////////////////////////////////
-    void show()
-    {
-        struct node *q;
-        if (start == NULL)
-        {
-            cout<<"empty"<<endl;
-            return;
-        }
-        q = start;
-        while (q != NULL)
-        {
-            cout<<q->data<<" <-> ";
-            q = q->next;
-        }
-        cout<<"NULL"<<endl;
-    }
+    dll.deleteNode(25);   // not found
+    dll.show();
 
-///////////////////
-    int main()
-    {
-        create(5);
-        create(3);
-        create(8);
-        create(12);
+    dll.deleteNode(5);    // delete head
+    dll.show();
 
-        show();
+    dll.deleteNode(12);   // delete last
+    dll.show();
 
-        deletenode(25);
-
-        show();
-
-        deletenode(5);
-
-        show();
-
-		getch();
-    }
+    dll.deleteNode(8);    // delete middle
+    dll.show();
+}
