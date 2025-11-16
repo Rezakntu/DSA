@@ -1,3 +1,5 @@
 # ninja log v6
 6	947	7849877937896856	CMakeFiles/double_linkedlist_reverse.dir/main.cpp.obj	5a57387e0c7a744c
 951	1121	7849877947357384	double_linkedlist_reverse.exe	1e2b713618ef0420
+17	789	7849880571755155	CMakeFiles/double_linkedlist_reverse.dir/main.cpp.obj	5a57387e0c7a744c
+789	926	7849880579478344	double_linkedlist_reverse.exe	1e2b713618ef0420
