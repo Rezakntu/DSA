@@ -1,42 +1,33 @@
 #include "DoublyLinkedList.h"
 #include <iostream>
 
-int main()
-{
+int main() {
     DoublyLinkedList dll;
-    int choice, value, pos;
+    int choice, x, pos;
 
-    while (true)
-    {
-        std::cout << "\n1. Push Back\n";
-        std::cout << "2. Push Front\n";
-        std::cout << "3. Insert After Position\n";
-        std::cout << "4. Show\n";
-        std::cout << "5. Exit\n";
-        std::cout << "Enter (1..5): ";
-
+    while (true) {
+        std::cout << "\n1. Push Back\n2. Push Front\n3. Insert After Position\n4. Show\n5. Exit\n> ";
         std::cin >> choice;
 
-        switch (choice)
-        {
+        switch (choice) {
             case 1:
                 std::cout << "Value: ";
-            std::cin >> value;
-            dll.push_back(value);
+            std::cin >> x;
+            dll.push_back(x);
             break;
 
             case 2:
                 std::cout << "Value: ";
-            std::cin >> value;
-            dll.push_front(value);
+            std::cin >> x;
+            dll.push_front(x);
             break;
 
             case 3:
                 std::cout << "Value: ";
-            std::cin >> value;
+            std::cin >> x;
             std::cout << "Position: ";
             std::cin >> pos;
-            dll.insert_after(pos, value);
+            dll.insert_after(pos, x);
             break;
 
             case 4:
@@ -45,9 +36,6 @@ int main()
 
             case 5:
                 return 0;
-
-            default:
-                std::cout << "Invalid.\n";
         }
     }
 }

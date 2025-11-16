@@ -8,14 +8,14 @@ class DoublyLinkedList
 {
 public:
     struct Node {
-        int data;
+        int data{};
         std::unique_ptr<Node> next;
-        std::weak_ptr<Node> prev;
+        Node* prev = nullptr;
 
         explicit Node(int d) : data(d) {}
     };
 
-    DoublyLinkedList();
+    DoublyLinkedList() = default;
     ~DoublyLinkedList() = default;
 
     void push_back(int value);
@@ -26,9 +26,7 @@ public:
 
 private:
     std::unique_ptr<Node> head;
-    std::weak_ptr<Node> tail;   // not required but convenient
-
-    std::shared_ptr<Node> get_raw(Node* p) const;
+    Node* tail = nullptr;
 };
 
 #endif
