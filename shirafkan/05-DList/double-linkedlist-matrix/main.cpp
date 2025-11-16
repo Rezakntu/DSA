@@ -1,45 +1,43 @@
-// f a linked list from given 2D matrix
 #include <iostream>
-#include <conio.h>
-#include<bits/stdc++.h>
 using namespace std;
-/////////////////////////////////////////////////////////
-struct node {
-    int    data;
-    node  *right , *down;
-};
-//////////////////////////////////////////////////////////
-node  *f(int a[][3], int i, int j, int n, int m)
-{
-    if (i > n - 1 || j > m - 1)
-        return NULL;
 
-    node  *t;
-    t = new node();
+/////////////////////////////////////////////////////////
+struct Node {
+    int data;
+    Node* right;
+    Node* down;
+};
+
+/////////////////////////////////////////////////////////
+Node* buildList(int a[][3], int i, int j, int n, int m)
+{
+    if (i >= n || j >= m)
+        return nullptr;
+
+    Node* t = new Node();
     t->data = a[i][j];
 
-    t->right = f(a, i, j + 1, n, m);
-    t->down  = f(a, i + 1, j, n, m);
+    t->right = buildList(a, i, j + 1, n, m);
+    t->down  = buildList(a, i + 1, j, n, m);
 
     return t;
 }
+
 /////////////////////////////////////////////////////////
-void display(node  *head)
+void display(Node* head)
 {
-    node  *right,*down;
+    Node* row = head;
 
-    down = head;
-
-    while (down)
+    while (row != nullptr)
     {
-        right = down;
-        while (right)
+        Node* col = row;
+        while (col != nullptr)
         {
-            cout << right->data << " ";
-            right = right->right;
+            cout << col->data << " ";
+            col = col->right;
         }
         cout << "\n";
-        down = down->down;
+        row = row->down;
     }
 }
 
@@ -51,12 +49,9 @@ int main()
         { 4, 5, 6 }
     };
 
-    node *head;
-
-    head = f(a, 0, 0, 2, 3);
+    Node* head = buildList(a, 0, 0, 2, 3);
 
     display(head);
 
-    getch();
+    return 0;
 }
-
