@@ -1,3 +1,6 @@
 # ninja log v6
 44	6326	7849644583822104	CMakeFiles/double_linkedlist_insert03.dir/main.cpp.obj	5c3d47c834f82473
 6337	7047	7849644646748308	double_linkedlist_insert03.exe	5006616a785e57e0
+70	6020	7849648388712661	CMakeFiles/double_linkedlist_insert03.dir/DoublyLinkedList.cpp.obj	9f210e8a35b6e97b
+46	6476	7849648388472675	CMakeFiles/double_linkedlist_insert03.dir/main.cpp.obj	5c3d47c834f82473
+6476	7114	7849648452778796	double_linkedlist_insert03.exe	b39d5a6f457492b8

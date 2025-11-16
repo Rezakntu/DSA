@@ -3,4 +3,6 @@ project(double_linkedlist_insert03)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(double_linkedlist_insert03 main.cpp)
+add_executable(double_linkedlist_insert03 main.cpp
+        DoublyLinkedList.cpp
+        DoublyLinkedList.h)
