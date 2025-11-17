@@ -3,4 +3,6 @@ project(circular_LList_count)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(circular_LList_count main.cpp)
+add_executable(circular_LList_count main.cpp
+        CircularList.cpp
+        CircularList.h)

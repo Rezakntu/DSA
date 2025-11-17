@@ -1,3 +1,6 @@
 # ninja log v6
 24	4817	7850512647465444	CMakeFiles/circular_LList_count.dir/main.cpp.obj	8aa1e4b1b982daef
 4828	5565	7850512695502549	circular_LList_count.exe	5d4e3ee226e34add
+43	5949	7850515190522096	CMakeFiles/circular_LList_count.dir/main.cpp.obj	8aa1e4b1b982daef
+103	5977	7850515191122071	CMakeFiles/circular_LList_count.dir/CircularList.cpp.obj	89c275f440eb5f5b
+5977	6878	7850515249868526	circular_LList_count.exe	1209f227e44b6a7a
