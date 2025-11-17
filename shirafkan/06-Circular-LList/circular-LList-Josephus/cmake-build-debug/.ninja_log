@@ -1,0 +1,8 @@
+# ninja log v6
+38	18773	7851237823643765	CMakeFiles/circular_LList_Josephus.dir/main.cpp.obj	72707221327e06b0
+18790	19368	7851238011162466	circular_LList_Josephus.exe	bfaf9c048a06b979
+134	7029	7851239811534337	CMakeFiles/circular_LList_Josephus.dir/main.cpp.obj	72707221327e06b0
+165	7200	7851239811844318	CMakeFiles/circular_LList_Josephus.dir/JosephusList.cpp.obj	c0991e6a6fedb7e4
+7200	7777	7851239882187930	circular_LList_Josephus.exe	611c20e35effb2b6
+166	3402	7851240053124383	CMakeFiles/circular_LList_Josephus.dir/main.cpp.obj	72707221327e06b0
+3403	3885	7851240085482433	circular_LList_Josephus.exe	611c20e35effb2b6
