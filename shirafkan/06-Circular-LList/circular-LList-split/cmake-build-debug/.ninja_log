@@ -1,3 +1,6 @@
 # ninja log v6
 26	7087	7851209201462438	CMakeFiles/circular_LList_split.dir/main.cpp.obj	687ae87f48fa9e88
 7098	8527	7851209272182636	circular_LList_split.exe	ebe77e333145a14d
+40	5730	7851213554881856	CMakeFiles/circular_LList_split.dir/main.cpp.obj	687ae87f48fa9e88
+60	6027	7851213555091845	CMakeFiles/circular_LList_split.dir/CircularList.cpp.obj	9f0ad1cb881fc526
+6028	6610	7851213614758236	circular_LList_split.exe	e82516e8170c287a
