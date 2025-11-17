@@ -1,67 +1,16 @@
-// Circular Linked List
-#include<iostream>
-#include<cstdlib>
-#include<conio.h>
+#include "CircularLinkedList.h"
+#include <iostream>
 using namespace std;
-///////////////////////////
-struct node
-{
-    int          data;
-    struct node  *next;
-};
 
-//////////////////////////////////////////////////////////////////////////
-void  addbegin(struct node  **s, int item)
-{
-    struct node *n ,*t;
-
-    n = new(struct node);        //  n= (struct node *)malloc(sizeof(struct node));
-    n->data = item;
-    n->next = *s;
-
-    t = *s;
-    if (*s != NULL)
-    {
-        while (t->next != *s)
-            t = t->next;
-        t->next = n;
-    }
-    else
-        n->next = n;
-
-    *s = n;
-}
-
-////////////////////////////////////
-void show(struct node *h)
-{
-    struct node *t;
-
-    t = h;
-    if (h != NULL)
-    {
-        do
-        {
-            cout<< t->data<<"  ";
-            t = t->next;
-        }
-        while (t != h);
-    }
-}
-/////////////////////////////////
 int main()
 {
-    struct node *h;
+    Node* head = nullptr;
 
-    h = NULL;
+    addBegin(&head, 3);   // 3
+    addBegin(&head, 2);   // 2 3
+    addBegin(&head, 1);   // 1 2 3
 
-    addbegin(&h, 3);    // 3
+    show(head);           // prints: 1 2 3
 
-    addbegin(&h, 2);   // 2  3
-
-    addbegin(&h, 1);   // 1  2  3
-
-    show(h->next);
-
-    getch();
+    return 0;
 }
