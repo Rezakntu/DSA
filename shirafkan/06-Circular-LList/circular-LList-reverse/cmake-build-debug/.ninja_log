@@ -1,3 +1,6 @@
 # ninja log v6
 24	24797	7851200508047009	CMakeFiles/circular_LList_reverse.dir/main.cpp.obj	e4b767a9c38c252d
 24817	25900	7851200755979892	circular_LList_reverse.exe	e4171321a8806bc3
+175	6030	7851207539896772	CMakeFiles/circular_LList_reverse.dir/CircularList.cpp.obj	4ca4bde5a981b05f
+155	6054	7851207539696787	CMakeFiles/circular_LList_reverse.dir/main.cpp.obj	e4b767a9c38c252d
+6055	7061	7851207598683238	circular_LList_reverse.exe	a974614440366949
