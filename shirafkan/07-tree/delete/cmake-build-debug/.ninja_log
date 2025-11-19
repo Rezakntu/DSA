@@ -1,3 +1,6 @@
 # ninja log v6
 6	919	7852619539242344	CMakeFiles/delete.dir/main.cpp.obj	a88d2a5c298f4098
 922	1072	7852619548398640	delete.exe	e18505e9553d9061
+28	1049	7852620846961718	CMakeFiles/delete.dir/BinaryTree.cpp.obj	358fad80b7eff802
+22	1076	7852620846893443	CMakeFiles/delete.dir/main.cpp.obj	a88d2a5c298f4098
+1076	1219	7852620857436601	delete.exe	9ee9a3f58db5d9cd

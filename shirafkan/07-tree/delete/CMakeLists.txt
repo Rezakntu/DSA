@@ -3,4 +3,6 @@ project(delete)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(delete main.cpp)
+add_executable(delete main.cpp
+        BinaryTree.cpp
+        BinaryTree.h)
