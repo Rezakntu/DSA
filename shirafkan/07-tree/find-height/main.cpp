@@ -1,69 +1,21 @@
-// find height
-#include<iostream>
-#include<conio.h>
-using namespace std;
-///////////////////////////////////////////
-struct node
-{
-    int            data;
-    struct node*   left;
-    struct node*   right;
-};
+#include <iostream>
+#include "BinaryTree.h"
 
-///////////////////////////////////////////
-struct node* create(int item)
-{
-    struct node* n;
-    n= new(struct node);
+int main() {
+    BinaryTree tree;
 
-    n->data  = item;
-    n->left  = NULL;
-    n->right = NULL;
+    tree.setRoot(1);
+    auto r = tree.getRoot();
 
-    return(n);
-}
-///////////////////////////////////////////
+    auto left  = tree.addLeft(r, 2);
+    auto right = tree.addRight(r, 3);
 
-int height(struct node* n)
-{
-    int  lh,rh;
+    tree.addLeft(left, 4);
+    auto lr = tree.addRight(left, 5);
 
-    if (n==NULL)
-        return -1;
+    tree.addLeft(lr, 6);
 
-    if( (n->left==NULL) && (n->right==NULL)  )
-        return 0;
+    std::cout << tree.height(left);  // subtree height
 
-    else
-    {
-        lh = height(n->left);
-        rh = height(n->right);
-
-        if (lh > rh)
-            return(lh+1);
-        else
-            return(rh+1);
-    }
-}
-
-
-///////////////////////////////////////////
-
-int main()
-{
-    struct node *r;
-
-    r                     = create(1);
-
-    r->left               = create(2);
-    r->right              = create(3);
-
-    r->left->left         = create(4);
-    r->left->right        = create(5);
-
-    r->left->right->left  = create(6);
-
-    cout<<height( r->right);
-
-    getch();
+    return 0;
 }

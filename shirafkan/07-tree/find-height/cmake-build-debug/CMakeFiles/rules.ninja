@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = "C:\Program Files\JetBrains\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\WorkSpace\Cpp\DSA\DSA\shirafkan\07-tree -BD:\WorkSpace\Cpp\DSA\DSA\shirafkan\07-tree\cmake-build-debug
+  command = "C:\Program Files\JetBrains\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\WorkSpace\Cpp\DSA\DSA\shirafkan\07-tree\find-height -BD:\WorkSpace\Cpp\DSA\DSA\shirafkan\07-tree\find-height\cmake-build-debug
   description = Re-running CMake...
   generator = 1
 
