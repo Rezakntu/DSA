@@ -3,4 +3,6 @@ project(count_node)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(count_node main.cpp)
+add_executable(count_node main.cpp
+        BinaryTree.cpp
+        BinaryTree.h)
