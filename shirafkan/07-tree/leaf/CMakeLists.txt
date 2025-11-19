@@ -3,4 +3,6 @@ project(leaf)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(leaf main.cpp)
+add_executable(leaf main.cpp
+        BinaryTree.cpp
+        BinaryTree.h)

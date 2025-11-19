@@ -1,57 +1,21 @@
-// count leaf
-#include<iostream>
-#include<conio.h>
-using namespace std;
-///////////////////////////////////////////
-struct node
-{
-    int            data;
-    struct node*   left;
-    struct node*   right;
-};
+#include <iostream>
+#include "BinaryTree.h"
 
-///////////////////////////////////////////
-struct node* create(int item)
-{
-    struct node* n;
-    n= new(struct node);
+int main() {
+    BinaryTree tree;
 
-    n->data  = item;
-    n->left  = NULL;
-    n->right = NULL;
+    tree.setRoot(1);
+    auto r = tree.getRoot();
 
-    return(n);
-}
-///////////////////////////////////////////
-unsigned int countleaf(struct node* p)
-{
-    if(p == NULL)
-        return 0;
+    auto n2 = tree.addLeft(r, 2);
+    auto n3 = tree.addRight(r, 3);
 
-    if(p->left == NULL && p->right==NULL)
-        return 1;
-    else
-        return countleaf(p->left)+ countleaf(p->right);
-}
+    tree.addLeft(n2, 4);
+    auto n5 = tree.addRight(n2, 5);
 
+    tree.addLeft(n5, 6);
 
-///////////////////////////////////////////
+    std::cout << tree.countLeaves();
 
-int main()
-{
-    struct node *r;
-
-    r                     = create(1);
-
-    r->left               = create(2);
-    r->right              = create(3);
-
-    r->left->left         = create(4);
-    r->left->right        = create(5);
-
-    r->left->right->left  = create(6);
-
-    cout<<countleaf( r);
-
-    getch();
+    return 0;
 }
