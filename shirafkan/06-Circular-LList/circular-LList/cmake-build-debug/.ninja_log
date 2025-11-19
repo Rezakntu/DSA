@@ -1,0 +1,6 @@
+# ninja log v6
+17	3031	7850462093129766	CMakeFiles/circular_LList.dir/main.cpp.obj	f5398591c8573c8
+3043	3676	7850462123387929	circular_LList.exe	d0e02cbb24fa615c
+51	7253	7850466766037964	CMakeFiles/circular_LList.dir/main.cpp.obj	f5398591c8573c8
+228	7274	7850466767807862	CMakeFiles/circular_LList.dir/CircularLinkedList.cpp.obj	afc7b5122866c81b
+7275	8526	7850466838273606	circular_LList.exe	b208581298d4c12e
