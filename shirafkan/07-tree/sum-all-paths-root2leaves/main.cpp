@@ -1,66 +1,19 @@
-// sum number in all paths from root to leaves
-#include<iostream>
-#include<conio.h>
-using namespace std;
-///////////////////////////////////////////
-struct node
-{
-    int            data;
-    struct node*   left;
-    struct node*   right;
-};
+#include "BinaryTree.h"
 
-///////////////////////////////////////////
-struct node* create(int item)
-{
-    struct node* n;
-    n= new(struct node);
+int main() {
+    BinaryTree tree;
 
-    n->data  = item;
-    n->left  = NULL;
-    n->right = NULL;
+    auto root = tree.create(1);
 
-    return(n);
-}
+    root->left  = tree.create(2);
+    root->right = tree.create(3);
 
-///////////////////////////////////////////////////////////////
-int  tps(struct node *p, int x)
-{
-    if (p == NULL)
-        return 0;
+    root->left->left  = tree.create(4);
+    root->left->right = tree.create(5);
 
-    x = (x*10 + p->data);
+    root->left->right->left = tree.create(6);
 
-    if (p->left == NULL && p->right == NULL)
-        return x;
+    std::cout << tree.sumRootToLeafNumbers(root) << std::endl;
 
-    return tps(p->left, x) + tps(p->right, x);
-}
-
-
-////////////////////////////////////////////////////////////////
-int f(struct node *p)
-{
-    return tps(p, 0);
-}
-
-///////////////////////////////////////////
-
-int main()
-{
-    struct node *r;
-
-    r                     = create(1);
-
-    r->left               = create(2);
-    r->right              = create(3);
-
-    r->left->left         = create(4);
-    r->left->right        = create(5);
-
-    r->left->right->left  = create(6);
-
-    cout<<f( r);
-
-    getch();
+    return 0;
 }
