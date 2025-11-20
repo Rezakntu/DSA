@@ -1,3 +1,6 @@
 # ninja log v6
 25	7630	7853027370253192	CMakeFiles/sum_all_paths_root2leaves.dir/main.cpp.obj	f356cfc4de8784c7
 7642	8225	7853027446418351	sum_all_paths_root2leaves.exe	de247e826a1681e0
+52	5108	7853031384835073	CMakeFiles/sum_all_paths_root2leaves.dir/BinaryTree.cpp.obj	199cd9e0cf143d2e
+31	5300	7853031384635082	CMakeFiles/sum_all_paths_root2leaves.dir/main.cpp.obj	f356cfc4de8784c7
+5300	5868	7853031437321748	sum_all_paths_root2leaves.exe	99744d7c52d6103d
