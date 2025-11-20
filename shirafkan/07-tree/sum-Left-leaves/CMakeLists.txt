@@ -3,4 +3,6 @@ project(sum_Left_leaves)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(sum_Left_leaves main.cpp)
+add_executable(sum_Left_leaves main.cpp
+        BinaryTree.cpp
+        BinaryTree.h)

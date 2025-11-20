@@ -1,3 +1,6 @@
 # ninja log v6
 26	3777	7853010690371559	CMakeFiles/sum_Left_leaves.dir/main.cpp.obj	8bac1f35d50025e
 3792	4520	7853010728039167	sum_Left_leaves.exe	f8acd9f98ad9a48c
+132	8454	7853014313571651	CMakeFiles/sum_Left_leaves.dir/BinaryTree.cpp.obj	3f91faedfab53c47
+65	8484	7853014312901690	CMakeFiles/sum_Left_leaves.dir/main.cpp.obj	8bac1f35d50025e
+8484	9455	7853014397096352	sum_Left_leaves.exe	8153348e269fa5

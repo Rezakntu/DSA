@@ -1,74 +1,19 @@
-// find sum of all left leaves
-#include<iostream>
-#include<conio.h>
-using namespace std;
-///////////////////////////////////////////
-struct node
-{
-    int            data;
-    struct node*   left;
-    struct node*   right;
-};
+#include "BinaryTree.h"
 
-///////////////////////////////////////////
-struct node* create(int item)
-{
-    struct node* n;
-    n= new(struct node);
+int main() {
+    BinaryTree tree;
 
-    n->data  = item;
-    n->left  = NULL;
-    n->right = NULL;
+    auto root = tree.create(1);
 
-    return(n);
-}
-///////////////////////////////////////////
-bool isLeaf(node *p)
-{
-    if (p == NULL)
-        return false;
+    root->left  = tree.create(2);
+    root->right = tree.create(3);
 
-    if (p->left == NULL && p->right == NULL)
-        return true;
+    root->left->left  = tree.create(4);     // left leaf → included
+    root->left->right = tree.create(5);
 
-    return false;
-}
+    root->left->right->left = tree.create(6); // left leaf → included
 
-///////////////////////////////////////////////////////////////
-int lls(node *p)
-{
-    int s = 0;
+    std::cout << tree.sumLeftLeaves(root) << std::endl;
 
-    if (p != NULL)
-    {
-        if (isLeaf(p->left))
-            s = s + p->left->data;
-        else
-            s = s + lls(p->left);
-
-        s = s + lls(p->right);
-    }
-    return s;
-}
-
-///////////////////////////////////////////
-
-int main()
-{
-    struct node *r;
-
-    r                     = create(1);
-
-    r->left               = create(2);
-    r->right              = create(3);
-
-    r->left->left         = create(4);
-    r->left->right        = create(5);
-
-    r->left->right->left  = create(6);
-
-
-    cout<<lls( r);
-
-    getch();
+    return 0;
 }
