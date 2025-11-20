@@ -3,4 +3,6 @@ project(find_max)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(find_max main.cpp)
+add_executable(find_max main.cpp
+        BinaryTree.cpp
+        BinaryTree.h)

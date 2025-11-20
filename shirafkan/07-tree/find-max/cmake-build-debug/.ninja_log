@@ -1,3 +1,6 @@
 # ninja log v6
 29	10300	7852957427630173	CMakeFiles/find_max.dir/main.cpp.obj	cec0bdadc5d3c765
 10312	12257	7852957530453639	find_max.exe	e5951ab32d7e5ad7
+187	7619	7853004842782587	CMakeFiles/find_max.dir/BinaryTree.cpp.obj	5b168e037871d04e
+133	7700	7853004842242627	CMakeFiles/find_max.dir/main.cpp.obj	cec0bdadc5d3c765
+7700	8987	7853004917917832	find_max.exe	6667ae8a6b05566b
