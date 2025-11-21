@@ -3,4 +3,6 @@ project(_node_ancestors)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(_node_ancestors main.cpp)
+add_executable(_node_ancestors main.cpp
+        Ancestors.cpp
+        Ancestors.h)

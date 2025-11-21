@@ -1,70 +1,19 @@
-// Ancestors of a node
-#include<iostream>
-#include<conio.h>
+#include "Ancestors.h"
 
-using namespace std;
-/////////////////////////////////////////////////
-struct node
-{
-    int           data;
-    struct node*  left;
-    struct node*  right;
-};
-/////////////////////////////////////////////////
-struct node* create(int item)
-{
-    struct node* n;
+int main() {
 
-    n = new (struct node);
-    n->data = item;
-    n->left = NULL;
-    n->right = NULL;
+    // Construct tree
+    auto root = create(6);
+    root->left = create(2);
+    root->right = create(3);
 
-    return(n);
-}
-/////////////////////////////////////////////////
-bool ancestors(struct node *r, int x)
-{
-    if (r == NULL)
-        return false;
+    root->left->left = create(7);
+    root->left->right = create(5);
 
-    if (r->data == x)
-        return true;
+    root->left->left->right = create(8);
 
-    if ( ancestors(r->left, x) || ancestors(r->right, x) )
-    {
-        cout << r->data << " ";
-        return true;
-    }
+    // Find ancestors of 3
+    ancestors(root.get(), 3);
 
-    return false;
-}
-/////////////////////////////////////////////////
-int main()
-{
-
-    /*
-
-                6
-              /   \
-            2      3
-          /  \
-        7     5
-         \
-          8
-
-    */
-    struct node *r;
-
-    r = create(6);
-    r->left        = create(2);
-    r->right       = create(3);
-    r->left->left  = create(7);
-    r->left->right = create(5);
-    r->left->left->right = create(8);
-
-
-    ancestors(r,3);
-
-    getch();
+    return 0;
 }

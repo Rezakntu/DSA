@@ -1,3 +1,6 @@
 # ninja log v6
 7	889	7854146149696862	CMakeFiles/_node_ancestors.dir/main.cpp.obj	76ffc56067e8cdc5
 892	1048	7854146158549081	_node_ancestors.exe	f455852dc940b0a5
+29	1050	7854148301783583	CMakeFiles/_node_ancestors.dir/Ancestors.cpp.obj	362e8a0b31d99a01
+23	1060	7854148301723738	CMakeFiles/_node_ancestors.dir/main.cpp.obj	76ffc56067e8cdc5
+1060	1227	7854148312101181	_node_ancestors.exe	c662fbb6cd2bd195
