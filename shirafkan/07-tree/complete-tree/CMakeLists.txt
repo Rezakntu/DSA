@@ -3,4 +3,6 @@ project(complete_tree)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(complete_tree main.cpp)
+add_executable(complete_tree main.cpp
+        BinaryTree.cpp
+        BinaryTree.h)

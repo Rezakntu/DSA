@@ -1,3 +1,6 @@
 # ninja log v6
 8	986	7854149877578876	CMakeFiles/complete_tree.dir/main.cpp.obj	1e0548ac35c5d49b
 989	1125	7854149887378583	complete_tree.exe	6d7f7131487b0771
+22	1009	7854151705854853	CMakeFiles/complete_tree.dir/main.cpp.obj	1e0548ac35c5d49b
+28	1207	7854151705914344	CMakeFiles/complete_tree.dir/BinaryTree.cpp.obj	d1ab5f33cbe9e534
+1207	1384	7854151717703502	complete_tree.exe	1c33af41c4e0fa94
