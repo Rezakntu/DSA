@@ -3,4 +3,6 @@ project(expression_tree)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(expression_tree main.cpp)
+add_executable(expression_tree main.cpp
+        ExpressionTree.cpp
+        ExpressionTree.h)

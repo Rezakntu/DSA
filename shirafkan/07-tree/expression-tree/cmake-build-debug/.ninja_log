@@ -1,3 +1,6 @@
 # ninja log v6
 7	4430	7854091988586032	CMakeFiles/expression_tree.dir/main.cpp.obj	d469e0905e4d3c89
 4437	4629	7854092032878640	expression_tree.exe	bf634e0c666d8acb
+25	1180	7854093749161089	CMakeFiles/expression_tree.dir/main.cpp.obj	d469e0905e4d3c89
+31	1315	7854093749220938	CMakeFiles/expression_tree.dir/ExpressionTree.cpp.obj	bc4b90e41953cbbe
+1315	1479	7854093762062525	expression_tree.exe	fc3a6573777e3fe5
