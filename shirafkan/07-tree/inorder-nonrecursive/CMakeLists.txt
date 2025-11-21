@@ -3,4 +3,6 @@ project(inorder_nonrecursive)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(inorder_nonrecursive main.cpp)
+add_executable(inorder_nonrecursive main.cpp
+        BinaryTree.cpp
+        BinaryTree.h)

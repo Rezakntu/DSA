@@ -1,3 +1,6 @@
 # ninja log v6
 8	1048	7854083141418946	CMakeFiles/inorder_nonrecursive.dir/main.cpp.obj	c193159e33e2bd76
 1051	1210	7854083151847659	inorder_nonrecursive.exe	8c91bd3571253c7d
+24	1071	7854085828125146	CMakeFiles/inorder_nonrecursive.dir/main.cpp.obj	c193159e33e2bd76
+30	1223	7854085828175177	CMakeFiles/inorder_nonrecursive.dir/BinaryTree.cpp.obj	425ec2a4ae0bc64b
+1223	1403	7854085840110550	inorder_nonrecursive.exe	78b88141c3e0ad99
