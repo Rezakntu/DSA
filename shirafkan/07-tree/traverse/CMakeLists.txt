@@ -3,4 +3,6 @@ project(traverse)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(traverse main.cpp)
+add_executable(traverse main.cpp
+        BinaryTree.cpp
+        BinaryTree.h)

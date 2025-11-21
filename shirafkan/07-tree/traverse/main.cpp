@@ -1,85 +1,27 @@
-// traverse(inorder , preorder, postorder)
-#include<iostream>
-#include<conio.h>
-using namespace std;
-///////////////////////////////////////////
-struct node
-{
-    int            data;
-    struct node*   left;
-    struct node*   right;
-};
+#include "BinaryTree.h"
 
-///////////////////////////////////////////
-struct node* create(int item)
-{
-    struct node* n;
-    n= new(struct node);
+int main() {
+    BinaryTree tree;
 
-    n->data  = item;
-    n->left  = NULL;
-    n->right = NULL;
+    auto root = tree.create(1);
 
-    return(n);
-}
-///////////////////////////////////////////
-void preorder(struct node *p)
-{
-    if (p != NULL)
-    {
-        cout << p->data <<"  ";
-        preorder(p->left);
-        preorder(p->right);
-    }
-}
-///////////////////////////////////////////
-void inorder(struct node *p)
-{
-    if (p != NULL)
-    {
-        inorder(p->left);
-        cout << p->data <<"  ";
-        inorder(p->right);
-    }
-}
-///////////////////////////////////////////
-void postorder(struct node *p)
-{
-    if (p != NULL)
-    {
-        postorder(p->left);
-        postorder(p->right);
-        cout << p->data <<"  ";
-    }
-}
-///////////////////////////////////////////
-int main()
-{
-    struct node *r;
+    root->left  = tree.create(2);
+    root->right = tree.create(3);
 
-    r  = create(1);
+    root->left->left  = tree.create(4);
+    root->left->right = tree.create(5);
 
-    r->left  = create(2);
-    r->right = create(3);
+    root->left->right->left = tree.create(6);
 
-    r->left->left  = create(4);
-    r->left->right = create(5);
+    std::cout << "preorder  : ";
+    tree.preorder(root);     // 1 2 4 5 6 3
 
-    r->left->right->left  = create(6);
+    std::cout << "\ninorder   : ";
+    tree.inorder(root);      // 4 2 6 5 1 3
 
-    cout<<"preorder  : ";
-    preorder (r);  // 124563
+    std::cout << "\npostorder : ";
+    tree.postorder(root);    // 4 6 5 2 3 1
 
-    cout<<endl<<endl;
-
-    cout<<"inorder   : ";
-    inorder  (r);  //426513
-
-
-    cout<<endl<<endl;
-
-    cout<<"postorder : ";
-    postorder(r);  //465231
-
-    getch();
+    std::cout << std::endl;
+    return 0;
 }

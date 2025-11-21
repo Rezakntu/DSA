@@ -1,3 +1,6 @@
 # ninja log v6
 8	1670	7854074820340390	CMakeFiles/traverse.dir/main.cpp.obj	baa2627c14b99e95
 1673	1977	7854074836985695	traverse.exe	a00601cfeec3a0d5
+31	1089	7854082098137942	CMakeFiles/traverse.dir/BinaryTree.cpp.obj	b3c0712c559d5785
+24	1096	7854082098068126	CMakeFiles/traverse.dir/main.cpp.obj	baa2627c14b99e95
+1096	1266	7854082108796618	traverse.exe	d9ab57e92ec7d284
