@@ -1,3 +1,6 @@
 # ninja log v6
 7	947	7854153054598772	CMakeFiles/equal.dir/main.cpp.obj	a347a0fd930dff1
 951	1113	7854153064048268	equal.exe	347ec01dc410f3c4
+30	1032	7854154796439478	CMakeFiles/equal.dir/Tree.cpp.obj	6f0613012b582dcd
+23	1042	7854154796367922	CMakeFiles/equal.dir/main.cpp.obj	a347a0fd930dff1
+1042	1182	7854154806555092	equal.exe	855f5cb4e58c469
