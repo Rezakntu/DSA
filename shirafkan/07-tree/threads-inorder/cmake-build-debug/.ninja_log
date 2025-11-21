@@ -1,3 +1,6 @@
 # ninja log v6
 5	927	7854089395284292	CMakeFiles/threads_inorder.dir/main.cpp.obj	f976855ac6f7dfdb
 930	1078	7854089404539593	threads_inorder.exe	818fb2b394eeb2ba
+31	915	7854091008309781	CMakeFiles/threads_inorder.dir/ThreadedBinaryTree.cpp.obj	1959c77f36d68cbe
+23	918	7854091008230003	CMakeFiles/threads_inorder.dir/main.cpp.obj	f976855ac6f7dfdb
+918	1069	7854091017171939	threads_inorder.exe	4ccefa9276058932

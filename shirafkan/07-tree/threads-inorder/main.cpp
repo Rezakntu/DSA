@@ -1,73 +1,19 @@
-// Inorder Traversal using Threads
-#include<iostream>
-#include<conio.h>
-using namespace std;
-///////////////////////////////////////////
-struct node
-{
-    int    data;
-    node   *left;
-    node   *right;
-    int   rflag;
-};
-///////////////////////////////////////////
-struct node* create(int item)
-{
-    struct node* n;
-    n= new(struct node);
+#include "ThreadedBinaryTree.h"
 
-    n->data  = item;
-    n->left  = NULL;
-    n->right = NULL;
-    n->rflag = 0;
+int main() {
+    ThreadedBinaryTree tree;
 
-    return(n);
-}
-///////////////////////////////////////////
-struct node* leftmost(struct node *n)
-{
-    if (n == NULL)
-        return NULL;
+    auto* r = tree.createNode(1);
+    tree.setRoot(r);
 
-    while (n->left != NULL)
-        n = n->left;
+    r->left = tree.createNode(2);
+    r->right = tree.createNode(3);
 
-    return n;
-}
-///////////////////////////////////////////
-void inorder(struct node *root)
-{
-    struct node *cur;
+    r->left->left = tree.createNode(4);
+    r->left->right = tree.createNode(5);
 
-    cur = leftmost(root);
+    // No threads created in this example (rflag always false)
+    tree.inorder();
 
-    while (cur != NULL)
-    {
-        cout<<cur->data;
-
-        if (cur->rflag==1)
-            cur = cur->right;
-        else
-            cur = leftmost(cur->right);
-    }
-}
-
-
-////////////////////////////////////////////
-
-int main()
-{
-    struct node *r;
-
-    r                     = create(1);
-
-    r->left               = create(2);
-    r->right              = create(3);
-
-    r->left->left         = create(4);
-    r->left->right        = create(5);
-
-    inorder( r);
-
-    getch();
+    return 0;
 }
