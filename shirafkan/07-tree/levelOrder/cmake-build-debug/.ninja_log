@@ -1,3 +1,6 @@
 # ninja log v6
 8	1125	7854086646022305	CMakeFiles/levelOrder.dir/main.cpp.obj	b9fb5f20cf62d60a
 1128	1277	7854086657234500	levelOrder.exe	a172ea773530fa38
+24	1122	7854087990728243	CMakeFiles/levelOrder.dir/main.cpp.obj	b9fb5f20cf62d60a
+29	1227	7854087990777788	CMakeFiles/levelOrder.dir/BinaryTree.cpp.obj	12b0d353c9107c7c
+1227	1400	7854088002758574	levelOrder.exe	e0030c83bf518756

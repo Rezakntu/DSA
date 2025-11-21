@@ -3,4 +3,6 @@ project(levelOrder)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(levelOrder main.cpp)
+add_executable(levelOrder main.cpp
+        BinaryTree.cpp
+        BinaryTree.h)
