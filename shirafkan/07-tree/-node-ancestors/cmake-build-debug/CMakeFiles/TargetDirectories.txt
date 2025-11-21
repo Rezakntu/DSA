@@ -1,0 +1,3 @@
+D:/WorkSpace/Cpp/DSA/DSA/shirafkan/07-tree/-node-ancestors/cmake-build-debug/CMakeFiles/_node_ancestors.dir
+D:/WorkSpace/Cpp/DSA/DSA/shirafkan/07-tree/-node-ancestors/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/WorkSpace/Cpp/DSA/DSA/shirafkan/07-tree/-node-ancestors/cmake-build-debug/CMakeFiles/rebuild_cache.dir
