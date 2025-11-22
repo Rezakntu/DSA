@@ -3,4 +3,6 @@ project(predecessor)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(predecessor main.cpp)
+add_executable(predecessor main.cpp
+        BST.cpp
+        BST.h)

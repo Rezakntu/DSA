@@ -1,75 +1,7 @@
-//Find  Predecessor and Successor in BST
+#include "BST.h"
 #include <iostream>
-#include <conio.h>
-using namespace std;
-///////////////////////////////
-struct node
-{
-    int data;
-    struct node *left;
-    struct node *right;
-};
-/////////////////////////////////////////////////////
-node *create(int item)
-{
-    node *t =  new node;
-    t->data = item;
-    t->left = t->right = NULL;
-    return t;
-}
-//////////////////////////////////////////////////////
-node* add(node* p, int item)
-{
-    if (p == NULL)
-        return create(item);
 
-    if (item < p->data)
-        p->left  = add(p->left, item);
-    else
-        p->right = add(p->right, item);
-    return p;
-}
-///////////////////////////////////////////////////////////
-void   PreSuc(node* r, node*&  pre, node*&  suc , int item)
-{
-    node* t;
-    if (r == NULL)  return;
-
-    if ( item == r->data )
-    {
-        if (r->left != NULL)
-        {
-            t = r->left;
-            while (t->right)
-                t = t->right;
-            pre = t ;
-        }
-
-        if (r->right != NULL)
-        {
-            t = r->right ;
-            while (t->left)
-                t = t->left ;
-            suc = t ;
-        }
-        return ;
-    }
-
-    if (item < r->data )
-    {
-        suc = r ;
-        PreSuc(r->left, pre, suc, item) ;
-    }
-    else
-    {
-        pre = r ;
-        PreSuc(r->right, pre, suc, item) ;
-    }
-}
-
-///////////////////////////////////////////////////////
-int main()
-{
+int main() {
     /*
                5
             /     \
@@ -78,32 +10,28 @@ int main()
         2    4   6    8
     */
 
-    node *r,*p,*s;
+    BST tree;
 
-    r = NULL;
-    r = add(r, 5);
-    add(r, 3);
-    add(r, 2);
-    add(r, 4);
-    add(r, 7);
-    add(r, 6);
-    add(r, 8);
+    tree.insert(5);
+    tree.insert(3);
+    tree.insert(2);
+    tree.insert(4);
+    tree.insert(7);
+    tree.insert(6);
+    tree.insert(8);
 
-    p = NULL;
-    s = NULL;
-    PreSuc(r, p, s, 7);
+    int key = 7;
 
-    if (p != NULL)
-        cout << p->data << endl;
+    auto pre = tree.predecessor(key);
+    auto suc = tree.successor(key);
+
+    if (pre)
+        std::cout << "Predecessor: " << *pre << "\n";
     else
-        cout << "No Predecessor";
+        std::cout << "No Predecessor\n";
 
-    if (s != NULL)
-        cout << s->data;
+    if (suc)
+        std::cout << "Successor: " << *suc << "\n";
     else
-        cout << "No Successor";
-
-    getch();
+        std::cout << "No Successor\n";
 }
-
-

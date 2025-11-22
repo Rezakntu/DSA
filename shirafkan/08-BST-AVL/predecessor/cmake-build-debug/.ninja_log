@@ -1,3 +1,6 @@
 # ninja log v6
 19	3184	7855568389641862	CMakeFiles/predecessor.dir/main.cpp.obj	d66ca29da4b9a58e
 3195	3569	7855568421409847	predecessor.exe	71a3167b11a8d6a7
+37	5922	7855572161992507	CMakeFiles/predecessor.dir/main.cpp.obj	d66ca29da4b9a58e
+59	6050	7855572162212487	CMakeFiles/predecessor.dir/BST.cpp.obj	ca9ee0c10913fb32
+6051	6604	7855572222118685	predecessor.exe	718cc7d45515fe0f
