@@ -1,3 +1,6 @@
 # ninja log v6
 25	22423	7855550613209947	CMakeFiles/BST_search.dir/main.cpp.obj	6e6e2957ff00df0c
 22442	23486	7855550837385709	BST_search.exe	5215822ea45f3730
+71	6496	7855560265607476	CMakeFiles/BST_search.dir/BST.cpp.obj	327c0ea6e6b86d2d
+44	6645	7855560265337488	CMakeFiles/BST_search.dir/main.cpp.obj	6e6e2957ff00df0c
+6645	8008	7855560331343295	BST_search.exe	224affd4a20949b2
