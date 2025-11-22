@@ -1,67 +1,15 @@
-// BST : insert
-#include<bits/stdc++.h>
-#include <conio.h>
-using namespace std;
-///////////////////////////////////////////////
-struct node
-{
-    int  data;
-    struct node *left, *right;
-};
-///////////////////////////////////////////////
-struct node *create(int item)
-{
-    struct  node *t;
-	t = new node;
-    t->data = item;
-    t->left = t->right = NULL;
-    return t;
-}
-//////////////////////////////////////////////
-struct node* insert(struct node* n, int item)
-{
-    if (n == NULL)
-	    return create(item);
+#include "BST.h"
 
-    if (item < n->data)
-        n->left  = insert(n->left , item);
+int main() {
+    BST tree;
 
-    else if (item > n->data)
-        n->right = insert(n->right, item);
+    tree.insert(8);
+    tree.insert(5);
+    tree.insert(30);
+    tree.insert(20);
+    tree.insert(9);
 
-    return n;
-}
-//////////////////////////////////////////////////////
-void inorder(struct node *r)
-{
-    if (r != NULL)
-    {
-        inorder(r->left);
-        cout<< r->data <<"  ";
-        inorder(r->right);
-    }
-}
-//////////////////////////////////////////////////////
-int main()
-{
-  /*
-              8
-            /    \
-          5      30
-                 /
-              20
-*/
-    struct node *r = NULL;
+    tree.inorder();   // 5 8 9 20 30
 
-    r = insert(r, 8);
-    insert(r, 5);
-    insert(r, 30);
-    insert(r, 20);
-
-    insert(r, 9);
-
-    inorder(r);
-
-
-	getch();
+    return 0;
 }

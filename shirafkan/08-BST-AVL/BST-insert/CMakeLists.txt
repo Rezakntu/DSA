@@ -3,4 +3,6 @@ project(BST_insert)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(BST_insert main.cpp)
+add_executable(BST_insert main.cpp
+        BST.cpp
+        BST.h)
