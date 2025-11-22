@@ -1,3 +1,6 @@
 # ninja log v6
 37	2857	7855542986695522	CMakeFiles/BST_delete.dir/main.cpp.obj	b60c5f4553dbb049
 2868	3286	7855543015003706	BST_delete.exe	dc0a5d1ce6e987b6
+110	5565	7855545946057724	CMakeFiles/BST_delete.dir/BST.cpp.obj	d55afbe749948206
+60	5728	7855545945557765	CMakeFiles/BST_delete.dir/main.cpp.obj	b60c5f4553dbb049
+5728	6426	7855546002234158	BST_delete.exe	1a9a52a82b90becf

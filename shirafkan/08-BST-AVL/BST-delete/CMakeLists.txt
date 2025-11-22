@@ -3,4 +3,6 @@ project(BST_delete)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(BST_delete main.cpp)
+add_executable(BST_delete main.cpp
+        BST.cpp
+        BST.h)
