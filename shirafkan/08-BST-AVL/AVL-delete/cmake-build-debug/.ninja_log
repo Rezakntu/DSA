@@ -1,3 +1,6 @@
 # ninja log v6
 27	5242	7855578925653335	CMakeFiles/AVL_delete.dir/main.cpp.obj	eddd9ecffca8a1c6
 5253	6128	7855578977920024	AVL_delete.exe	c31e9606a57b8761
+40	4923	7855615311901401	CMakeFiles/AVL_delete.dir/main.cpp.obj	eddd9ecffca8a1c6
+70	5672	7855615312201381	CMakeFiles/AVL_delete.dir/AVL.cpp.obj	5b3aaed83963f37d
+5673	6127	7855615368227817	AVL_delete.exe	2c13f061001d5130

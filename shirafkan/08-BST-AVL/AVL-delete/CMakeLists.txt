@@ -3,4 +3,6 @@ project(AVL_delete)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(AVL_delete main.cpp)
+add_executable(AVL_delete main.cpp
+        AVL.cpp
+        AVL.h)
