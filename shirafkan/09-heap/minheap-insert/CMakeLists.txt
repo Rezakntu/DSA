@@ -3,4 +3,6 @@ project(minheap_insert)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(minheap_insert main.cpp)
+add_executable(minheap_insert main.cpp
+        MinHeap.cpp
+        MinHeap.h)

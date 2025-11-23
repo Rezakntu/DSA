@@ -1,3 +1,6 @@
 # ninja log v6
 26	4445	7856425656256223	CMakeFiles/minheap_insert.dir/main.cpp.obj	c4d1aac2ff419740
 4454	5284	7856425700540193	minheap_insert.exe	2a248766f3ea490c
+57	9572	7856429492219026	CMakeFiles/minheap_insert.dir/main.cpp.obj	c4d1aac2ff419740
+113	9634	7856429492772052	CMakeFiles/minheap_insert.dir/MinHeap.cpp.obj	18f3021a533a617f
+9635	10366	7856429587992050	minheap_insert.exe	babff73f563d941e
