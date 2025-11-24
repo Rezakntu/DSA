@@ -1,3 +1,6 @@
 # ninja log v6
 46	4935	7856493533287356	CMakeFiles/minheap_delete.dir/main.cpp.obj	cc556865c507b527
 4946	5598	7856493582290409	minheap_delete.exe	cf4243d5040bfd68
+49	6993	7856497397507053	CMakeFiles/minheap_delete.dir/main.cpp.obj	cc556865c507b527
+94	8047	7856497397956627	CMakeFiles/minheap_delete.dir/minHeap.cpp.obj	1435fb2c4cbc006f
+8048	9533	7856497477492759	minheap_delete.exe	e46d129909fba119
