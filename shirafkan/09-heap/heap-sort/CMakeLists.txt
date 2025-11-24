@@ -3,4 +3,6 @@ project(heap_sort)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(heap_sort main.cpp)
+add_executable(heap_sort main.cpp
+        MaxHeapSort.cpp
+        MaxHeapSort.h)
