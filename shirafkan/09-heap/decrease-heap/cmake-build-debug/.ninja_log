@@ -1,0 +1,4 @@
+# ninja log v6
+31	3750	7856503181424367	CMakeFiles/decrease_heap.dir/MinHeap.cpp.obj	631c5732d3cd6a57
+11	4152	7856503181224702	CMakeFiles/decrease_heap.dir/main.cpp.obj	ab5e01934128bd49
+4154	4657	7856503222644321	decrease_heap.exe	6ecdd8dd36f9ef32
