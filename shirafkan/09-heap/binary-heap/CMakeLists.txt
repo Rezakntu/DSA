@@ -3,4 +3,6 @@ project(binary_heap)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(binary_heap main.cpp)
+add_executable(binary_heap main.cpp
+        binaryHeap.cpp
+        binaryHeap.h)

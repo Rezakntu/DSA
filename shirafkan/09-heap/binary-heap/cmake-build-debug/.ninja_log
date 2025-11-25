@@ -1,3 +1,6 @@
 # ninja log v6
 50	6230	7857249524694926	CMakeFiles/binary_heap.dir/main.cpp.obj	2377d3fbdf51f4c9
 6242	6996	7857249586620991	binary_heap.exe	35bb8c166a2b44ea
+47	3860	7857349233498252	CMakeFiles/binary_heap.dir/main.cpp.obj	2377d3fbdf51f4c9
+64	3959	7857349233668219	CMakeFiles/binary_heap.dir/binaryHeap.cpp.obj	f14bc3a34a98fa73
+3960	4514	7857349272625752	binary_heap.exe	91f40f570b30da25
