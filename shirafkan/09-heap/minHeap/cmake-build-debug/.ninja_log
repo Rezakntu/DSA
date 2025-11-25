@@ -1,3 +1,6 @@
 # ninja log v6
 25	6186	7857412820048601	CMakeFiles/minHeap.dir/main.cpp.obj	cf370a48f981a7ad
 6197	6865	7857412881714689	minHeap.exe	f6a8b950c423c459
+45	3993	7857419846802738	CMakeFiles/minHeap.dir/minHeap.cpp.obj	9eafd91e49cbc807
+27	4045	7857419846622752	CMakeFiles/minHeap.dir/main.cpp.obj	cf370a48f981a7ad
+4046	4606	7857419886800192	minHeap.exe	bf4e4ee452f903ff
