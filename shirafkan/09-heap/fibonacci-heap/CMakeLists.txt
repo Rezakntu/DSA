@@ -3,4 +3,6 @@ project(fibonacci_heap)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(fibonacci_heap main.cpp)
+add_executable(fibonacci_heap main.cpp
+        fibonacciHeap.cpp
+        fibonacciHeap.h)

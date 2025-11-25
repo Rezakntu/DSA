@@ -1,3 +1,6 @@
 # ninja log v6
 25	9175	7857351754388282	CMakeFiles/fibonacci_heap.dir/main.cpp.obj	82f4d5fd949d0c08
 9186	10155	7857351845992477	fibonacci_heap.exe	e2c20c682179a14
+48	6722	7857376978997731	CMakeFiles/fibonacci_heap.dir/main.cpp.obj	82f4d5fd949d0c08
+81	7795	7857376979327715	CMakeFiles/fibonacci_heap.dir/fibonacciHeap.cpp.obj	671c6809cc6024fc
+7796	8367	7857377056482823	fibonacci_heap.exe	9ce3881d814b1084
