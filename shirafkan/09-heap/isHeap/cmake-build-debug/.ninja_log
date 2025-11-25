@@ -1,3 +1,6 @@
 # ninja log v6
 22	506	7857407922779337	CMakeFiles/isHeap.dir/main.cpp.obj	606a9baf472cf9f7
 510	1209	7857407927669016	isHeap.exe	ddb9182a509f2b57
+41	3260	7857411332083005	CMakeFiles/isHeap.dir/HeapChecker.cpp.obj	c31aa95a240e8d8b
+20	4851	7857411331873047	CMakeFiles/isHeap.dir/main.cpp.obj	606a9baf472cf9f7
+4855	5360	7857411380229956	isHeap.exe	80fe4095ba627c92

@@ -3,4 +3,6 @@ project(isHeap)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(isHeap main.cpp)
+add_executable(isHeap main.cpp
+        HeapChecker.cpp
+        HeapChecker.h)
