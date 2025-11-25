@@ -1,3 +1,6 @@
 # ninja log v6
 25	2582	7857381366799316	CMakeFiles/treap.dir/main.cpp.obj	c9c23dba53f07f68
 2591	2967	7857381392457915	treap.exe	e6310788c662a4b6
+37	5925	7857384808650936	CMakeFiles/treap.dir/main.cpp.obj	c9c23dba53f07f68
+57	6823	7857384808850928	CMakeFiles/treap.dir/treap.cpp.obj	dddf5b2ac5a9b93d
+6824	7513	7857384876516619	treap.exe	a1c1ee2c771e95f5
