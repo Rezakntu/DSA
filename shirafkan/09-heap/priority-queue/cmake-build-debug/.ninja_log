@@ -1,3 +1,6 @@
 # ninja log v6
 13	1283	7858631338381801	CMakeFiles/priority_queue.dir/main.cpp.obj	e34eb709a8e9a9c7
 1287	1605	7858631351122920	priority_queue.exe	147ecccc775a6457
+30	1076	7858637238007734	CMakeFiles/priority_queue.dir/main.cpp.obj	e34eb709a8e9a9c7
+38	1107	7858637238087541	CMakeFiles/priority_queue.dir/PriorityQueue.cpp.obj	717d0e0ab1c65223
+1107	1260	7858637248782678	priority_queue.exe	b45778725c102b37
