@@ -1,0 +1,6 @@
+# ninja log v6
+7	909	7858654214752292	CMakeFiles/graph2.dir/main.cpp.obj	85bb484adf31414b
+913	1063	7858654223805283	graph2.exe	4909cc293176dcb1
+21	1094	7858656008888088	CMakeFiles/graph2.dir/main.cpp.obj	85bb484adf31414b
+28	1239	7858656008966075	CMakeFiles/graph2.dir/graph.cpp.obj	b1c04cfa1083665e
+1239	1409	7858656021074955	graph2.exe	dbc95b7d28cb0fed

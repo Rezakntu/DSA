@@ -1,0 +1,6 @@
+# ninja log v6
+6	885	7858638705306774	CMakeFiles/maxheapify.dir/main.cpp.obj	7b2ee5468e9adcae
+889	1031	7858638714137420	maxheapify.exe	24977edfd7e9f10b
+23	1009	7858642192354100	CMakeFiles/maxheapify.dir/main.cpp.obj	7b2ee5468e9adcae
+29	1025	7858642192423908	CMakeFiles/maxheapify.dir/MaxHeap.cpp.obj	fa939c3c85c3f245
+1025	1164	7858642202376844	maxheapify.exe	4894174738a73b4f
