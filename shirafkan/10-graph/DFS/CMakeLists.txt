@@ -3,4 +3,6 @@ project(DFS)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(DFS main.cpp)
+add_executable(DFS main.cpp
+        graph.cpp
+        graph.h)
