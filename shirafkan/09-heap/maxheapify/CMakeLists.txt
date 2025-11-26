@@ -3,4 +3,6 @@ project(maxheapify)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(maxheapify main.cpp)
+add_executable(maxheapify main.cpp
+        MaxHeap.cpp
+        MaxHeap.h)

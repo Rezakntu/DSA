@@ -1,50 +1,17 @@
-
+#include "MaxHeap.h"
 #include <iostream>
-#include <conio.h>
-using namespace std;
-////////////////////////////////////////////////
 
-void maxHeapify( int i , int *a , int n )
-{
-    int largest = i;
-
-    int left  = i * 2 + 1;
-    int right = i * 2 + 2;
-
-    if( left < n && a[ largest] < a[ left ])
-        largest = left;
-
-    if( right < n  && a[ largest ] < a[right])
-        largest = right;
-
-    if( largest != i )
-    {
-        swap( a[i], a[largest]);
-        maxHeapify( largest , a,  n );
-    }
-}
-////////////////////////////////////////////////
-
-int main()
-{
+int main() {
     int n;
-    int * a;
+    std::cout << "n: ";
+    std::cin >> n;
 
-    cout << "n: ";
-    cin >> n ;
+    std::vector<int> arr(n);
+    for (int i = 0; i < n; i++)
+        std::cin >> arr[i];
 
-    a = new int[n];
+    MaxHeap heap(arr);
+    heap.buildHeap();
 
-    for( int i = 0; i < n ; i++)
-        cin >> a[i];
-
-
-    for( int i = n/2 -1 ; i >= 0 ; i-- )
-        maxHeapify( i , a, n);
-
-    for(int i = 0; i < n ; i++)
-        cout << a[i] << " ";
-
-
-    getch();
+    heap.print();
 }
