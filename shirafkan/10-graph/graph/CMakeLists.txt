@@ -3,4 +3,6 @@ project(graph)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(graph main.cpp)
+add_executable(graph main.cpp
+        graph.cpp
+        graph.h)
