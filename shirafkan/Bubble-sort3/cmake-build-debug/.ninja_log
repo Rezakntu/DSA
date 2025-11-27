@@ -1,3 +1,6 @@
 # ninja log v6
 25	17565	7859132029234316	CMakeFiles/Bubble_sort3.dir/main.cpp.obj	1877f58018888f41
 17576	19803	7859132204733165	Bubble_sort3.exe	e597221d2d03039c
+320	10770	7859140468778820	CMakeFiles/Bubble_sort3.dir/BubbleSort.cpp.obj	fd1a2ac3d54dc7b4
+240	10998	7859140467978860	CMakeFiles/Bubble_sort3.dir/main.cpp.obj	1877f58018888f41
+10998	12318	7859140575562038	Bubble_sort3.exe	178ba09c73fca6a8
