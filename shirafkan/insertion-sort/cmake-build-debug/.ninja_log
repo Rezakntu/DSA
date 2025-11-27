@@ -1,3 +1,6 @@
 # ninja log v6
 30	2687	7859086144000768	CMakeFiles/insertion_sort.dir/main.cpp.obj	3da96c763333dc5f
 2699	3088	7859086170689114	insertion_sort.exe	53faf78a62bb38bc
+77	3296	7859103063250922	CMakeFiles/insertion_sort.dir/InsertionSort.cpp.obj	c4cc85067582bdfe
+51	6425	7859103062990953	CMakeFiles/insertion_sort.dir/main.cpp.obj	3da96c763333dc5f
+6425	6940	7859103126736892	insertion_sort.exe	1f4b9e7148ee7391

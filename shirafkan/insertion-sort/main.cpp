@@ -1,31 +1,17 @@
-//insertion sort
 #include <iostream>
-#include <conio.h>
-using namespace std;
-//////////////////////////////////////////////////////
-int main()
-{
-    int a[ ]={5,2,4,6,1,3};
-    int n=6;
+#include <vector>
+#include "InsertionSort.h"
 
-    int i,j,key;
+int main() {
+    std::vector<int> numbers = {5, 2, 4, 6, 1, 3};
 
-    for (i = 1; i <n; i++)
-    {
-        key = a[i];
-        j = i - 1;
+    InsertionSort sorter;
+    sorter.sort(numbers);
 
-        while (j >= 0 && a[j] > key)
-        {
-            a[j + 1] = a[j];
-            j--;
-        }
-        a[j + 1] = key;
+    for (int value : numbers) {
+        std::cout << value << " ";
     }
+    std::cout << "\n";
 
-    for(int i=0 ; i<n ; i++)
-        cout << a[i] <<"   ";
-
-    getch();
+    return 0;
 }
-
