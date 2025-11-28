@@ -1,3 +1,6 @@
 # ninja log v6
 7	1183	7860338936004658	CMakeFiles/merge_sort.dir/main.cpp.obj	3acf435ec86e7c1a
 1186	1410	7860338947801029	merge_sort.exe	8a505b3e6bf58daf
+36	707	7860347938572717	CMakeFiles/merge_sort.dir/MergeSort.cpp.obj	ab247b9252f1e49b
+29	1056	7860347938502894	CMakeFiles/merge_sort.dir/main.cpp.obj	3acf435ec86e7c1a
+1056	1460	7860347948776459	merge_sort.exe	4678d665f472d7b
