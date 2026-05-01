@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "insertion_sort",
+					"name" : "min_max_divideconquer",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "insertion_sort::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-insertion_sort-Debug-dfc3e237b4c71883559b.json",
-					"name" : "insertion_sort",
+					"id" : "min_max_divideconquer::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-min_max_divideconquer-Debug-4894262f247296dd7477.json",
+					"name" : "min_max_divideconquer",
 					"projectIndex" : 0
 				}
 			]
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "E:/Workspace/Cpp/DSA/shirafkan/insertion-sort/cmake-build-debug",
-		"source" : "E:/Workspace/Cpp/DSA/shirafkan/insertion-sort"
+		"build" : "D:/WorkSpace/Cpp/DSA/DSA/others/min_max_divide\u2011conquer/cmake-build-debug",
+		"source" : "D:/WorkSpace/Cpp/DSA/DSA/others/min_max_divide\u2011conquer"
 	},
 	"version" : 
 	{

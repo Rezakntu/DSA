@@ -1,4 +1,4 @@
-# Install script for directory: E:/Workspace/Cpp/DSA/shirafkan/insertion-sort
+# Install script for directory: D:/WorkSpace/Cpp/DSA/DSA/shirafkan/11-sort/insertion-sort
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "E:/Workspace/Cpp/DSA/shirafkan/insertion-sort/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/WorkSpace/Cpp/DSA/DSA/shirafkan/11-sort/insertion-sort/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
