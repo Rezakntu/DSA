@@ -1,0 +1,3 @@
+D:/WorkSpace/Cpp/DSA/DSA/shirafkan/11-sort/insertion-sort/cmake-build-debug/CMakeFiles/insertion_sort.dir
+D:/WorkSpace/Cpp/DSA/DSA/shirafkan/11-sort/insertion-sort/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/WorkSpace/Cpp/DSA/DSA/shirafkan/11-sort/insertion-sort/cmake-build-debug/CMakeFiles/rebuild_cache.dir
